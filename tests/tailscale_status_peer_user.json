@@ -1,0 +1,260 @@
+{
+    "Version": "1.84.3",
+    "TUN": true,
+    "BackendState": "Running",
+    "HaveNodeKey": true,
+    "AuthURL": "",
+    "TailscaleIPs": [
+        "0.0.0.0",
+        "::"
+    ],
+    "Self": {
+        "ID": "aaa-aaa",
+        "PublicKey": "nodekey:aaa-aaa",
+            "HostName": "redacted-host",
+            "DNSName": "redacted-host.tailnet.",
+        "OS": "linux",
+        "UserID": 123456789,
+        "TailscaleIPs": [
+            "0.0.0.0",
+            "::"
+        ],
+        "AllowedIPs": [
+            "0.0.0.0/32",
+            "::/128",
+            "0.0.0.0/0",
+            "::/0"
+        ],
+        "Addrs": [
+            "0.0.0.0:0",
+            "0.0.0.0:0",
+            "[::]:0",
+            "0.0.0.0:0",
+            "[::]:0",
+            "[::]:0"
+        ],
+        "CurAddr": "",
+            "Relay": "redacted-relay",
+        "RxBytes": 0,
+        "TxBytes": 0,
+            "Created": "1970-01-01T00:00:00Z",
+            "LastWrite": "1970-01-01T00:00:00Z",
+            "LastSeen": "1970-01-01T00:00:00Z",
+            "LastHandshake": "1970-01-01T00:00:00Z",
+        "Online": true,
+        "ExitNode": false,
+        "ExitNodeOption": true,
+        "Active": false,
+        "PeerAPIURL": [
+            "http://0.0.0.0:0",
+            "http://[::]:0"
+        ],
+        "TaildropTarget": 0,
+        "NoFileSharingReason": "",
+        "Capabilities": [
+            "HTTPS://TAILSCALE.COM/s/DEPRECATED-NODE-CAPS#see-https://github.com/tailscale/tailscale/issues/11508",
+            "https://tailscale.com/cap/file-sharing",
+            "https://tailscale.com/cap/is-admin",
+            "https://tailscale.com/cap/ssh",
+            "https://tailscale.com/cap/tailnet-lock",
+            "probe-udp-lifetime",
+            "ssh-behavior-v1",
+            "ssh-env-vars",
+            "store-appc-routes",
+            "tailnet.maxKeyDuration"
+        ],
+        "CapMap": {
+            "https://tailscale.com/cap/file-sharing": null,
+            "https://tailscale.com/cap/is-admin": null,
+            "https://tailscale.com/cap/ssh": null,
+            "https://tailscale.com/cap/tailnet-lock": null,
+            "probe-udp-lifetime": null,
+            "ssh-behavior-v1": null,
+            "ssh-env-vars": null,
+            "store-appc-routes": null,
+            "tailnet.maxKeyDuration": [
+                15552000
+            ]
+        },
+        "InNetworkMap": true,
+        "InMagicSock": false,
+        "InEngine": false
+    },
+    "Health": [],
+    "MagicDNSSuffix": "tail9810f.ts.net",
+    "CurrentTailnet": {
+        "Name": "test@test.com",
+        "MagicDNSSuffix": "tailnet",
+        "MagicDNSEnabled": false
+    },
+    "CertDomains": null,
+    "Peer": {
+        "nodekey:peer1": {
+            "ID": "peer1",
+            "PublicKey": "nodekey:peer1",
+            "HostName": "peer-host1",
+            "DNSName": "peer-host1.tailnet.",
+            "OS": "linux",
+            "UserID": 123456789,
+            "TailscaleIPs": [
+                "0.0.0.0",
+                "::"
+            ],
+            "AllowedIPs": [
+                "0.0.0.0/32",
+                "::/128",
+                "0.0.0.0/0",
+                "::/0"
+            ],
+            "Addrs": null,
+            "CurAddr": "",
+                "Relay": "redacted-relay",
+            "RxBytes": 0,
+            "TxBytes": 0,
+                "Created": "1970-01-01T00:00:00Z",
+                "LastWrite": "1970-01-01T00:00:00Z",
+                "LastSeen": "1970-01-01T00:00:00Z",
+                "LastHandshake": "1970-01-01T00:00:00Z",
+            "Online": false,
+            "ExitNode": false,
+            "ExitNodeOption": true,
+            "Active": false,
+            "PeerAPIURL": [
+                "http://0.0.0.0:0",
+                "http://[::]:0"
+            ],
+            "TaildropTarget": 5,
+            "NoFileSharingReason": "",
+            "InNetworkMap": true,
+            "InMagicSock": true,
+            "InEngine": false
+        },
+        "nodekey:peer2": {
+            "ID": "peer2",
+            "PublicKey": "nodekey:peer2",
+            "HostName": "peer-host2",
+            "DNSName": "peer-host2.tailnet.",
+            "OS": "iOS",
+            "UserID": 123456789,
+            "TailscaleIPs": [
+                "0.0.0.0",
+                "::"
+            ],
+            "AllowedIPs": [
+                "0.0.0.0/32",
+                "::/128"
+            ],
+            "Addrs": null,
+            "CurAddr": "0.0.0.0:0",
+                "Relay": "redacted-relay",
+            "RxBytes": 690640,
+            "TxBytes": 7453204,
+                "Created": "1970-01-01T00:00:00Z",
+                "LastWrite": "1970-01-01T00:00:00Z",
+                "LastSeen": "1970-01-01T00:00:00Z",
+                "LastHandshake": "1970-01-01T00:00:00Z",
+            "Online": true,
+            "ExitNode": false,
+            "ExitNodeOption": false,
+            "Active": true,
+            "PeerAPIURL": [
+                "http://0.0.0.0:0",
+                "http://[::]:0"
+            ],
+            "TaildropTarget": 1,
+            "NoFileSharingReason": "",
+            "InNetworkMap": true,
+            "InMagicSock": true,
+            "InEngine": true,
+            "KeyExpiry": "2026-01-24T07:12:22Z"
+        },
+        "nodekey:peer3": {
+            "ID": "peer3",
+            "PublicKey": "nodekey:peer3",
+                "HostName": "redacted-peer-host3",
+                "DNSName": "redacted-peer-host3.tailnet.",
+            "OS": "macOS",
+            "UserID": 123456789,
+            "TailscaleIPs": [
+                "0.0.0.0",
+                "::"
+            ],
+            "AllowedIPs": [
+                "0.0.0.0/32",
+                "::/128"
+            ],
+            "Addrs": null,
+            "CurAddr": "0.0.0.0:0",
+            "Relay": "fra",
+            "RxBytes": 52100,
+            "TxBytes": 77820,
+                "Created": "1970-01-01T00:00:00Z",
+                "LastWrite": "1970-01-01T00:00:00Z",
+                "LastSeen": "1970-01-01T00:00:00Z",
+                "LastHandshake": "1970-01-01T00:00:00Z",
+            "Online": true,
+            "ExitNode": false,
+            "ExitNodeOption": false,
+            "Active": true,
+            "PeerAPIURL": [
+                "http://0.0.0.0:0",
+                "http://[::]:0"
+            ],
+            "TaildropTarget": 1,
+            "NoFileSharingReason": "",
+            "InNetworkMap": true,
+            "InMagicSock": true,
+            "InEngine": true,
+            "KeyExpiry": "2025-12-23T05:20:44Z"
+        },
+        "nodekey:peer4": {
+            "ID": "peer4",
+            "PublicKey": "nodekey:peer4",
+                "HostName": "redacted-peer-host4",
+                "DNSName": "redacted-peer-host4.tailnet.",
+            "OS": "linux",
+            "UserID": 123456789,
+            "TailscaleIPs": [
+                "0.0.0.0",
+                "::"
+            ],
+            "AllowedIPs": [
+                "0.0.0.0/32",
+                "::/128",
+                "0.0.0.0/0",
+                "::/0"
+            ],
+            "Addrs": null,
+            "CurAddr": "",
+            "Relay": "fra",
+            "RxBytes": 0,
+            "TxBytes": 0,
+                "Created": "1970-01-01T00:00:00Z",
+                "LastWrite": "1970-01-01T00:00:00Z",
+                "LastSeen": "1970-01-01T00:00:00Z",
+                "LastHandshake": "1970-01-01T00:00:00Z",
+            "Online": false,
+            "ExitNode": false,
+            "ExitNodeOption": true,
+            "Active": false,
+            "PeerAPIURL": [
+                "http://0.0.0.0:0",
+                "http://[::]:0"
+            ],
+            "TaildropTarget": 5,
+            "NoFileSharingReason": "",
+            "InNetworkMap": true,
+            "InMagicSock": true,
+            "InEngine": false
+        }
+    },
+    "User": {
+        "123456789": {
+            "ID": 123456789,
+                "LoginName": "redacted@example.com",
+                "DisplayName": "Redacted User",
+                "ProfilePicURL": "https://redacted.example.com/profile.png"
+        }
+    },
+    "ClientVersion": null
+}
