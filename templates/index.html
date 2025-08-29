@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,7 @@
             --c-text: #333;
             --c-heading: #005f73;
             --c-border: #e9ecef;
-            --c-shadow: rgba(0,0,0,0.07);
+            --c-shadow: rgba(0, 0, 0, 0.07);
             --c-green: #2a9d8f;
             --c-yellow: #e9c46a;
             --c-red: #e76f51;
@@ -73,7 +74,13 @@
             font-size: clamp(1.75rem, 4vw, var(--font-size-xl));
             margin: 0 0 var(--spacing-md) 0;
         }
-        .last-update { font-size: 0.5em; color: var(--c-text); margin-left: 1em; font-weight: normal; }
+
+        .last-update {
+            font-size: 0.5em;
+            color: var(--c-text);
+            margin-left: 1em;
+            font-weight: normal;
+        }
 
         .widget {
             background: var(--c-widget);
@@ -118,8 +125,17 @@
             padding-bottom: var(--spacing-xs);
             border-bottom: 1px solid var(--c-border);
         }
-        .full-width { grid-column: 1 / -1; }
-        .error { color:var(--c-red); font-weight:bold; word-break: break-all; margin: 0.5em 0; }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .error {
+            color: var(--c-red);
+            font-weight: bold;
+            word-break: break-all;
+            margin: 0.5em 0;
+        }
 
         .progress-bar {
             height: 12px;
@@ -127,7 +143,7 @@
             border-radius: 6px;
             overflow: hidden;
             margin-top: var(--spacing-sm);
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
             position: relative;
         }
 
@@ -138,7 +154,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
+            background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
             animation: shimmer 2s infinite;
             opacity: 0;
         }
@@ -156,19 +172,55 @@
         }
 
         @keyframes shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
         }
 
-        .widget-stats { margin: 0; padding: 0; display: grid; grid-template-columns: auto 1fr; gap: 0.5em 1em; }
-        .widget-stats dt { font-weight: 500; opacity: 0.7; }
-        .widget-stats dd { margin: 0; text-align: right; }
+        .widget-stats {
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.5em 1em;
+        }
 
-        .cpu-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(130px, 1fr)); gap:1.5em; position: relative; z-index: 1; }
-        .cpu-core .usage { font-size: 0.9em; text-align: right; opacity: 0.8; }
+        .widget-stats dt {
+            font-weight: 500;
+            opacity: 0.7;
+        }
 
-        .network-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1em; }
-        .network-card, .peer-card {
+        .widget-stats dd {
+            margin: 0;
+            text-align: right;
+        }
+
+        .cpu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 1.5em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cpu-core .usage {
+            font-size: 0.9em;
+            text-align: right;
+            opacity: 0.8;
+        }
+
+        .network-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1em;
+        }
+
+        .network-card,
+        .peer-card {
             background: linear-gradient(135deg, var(--c-progress-bg) 0%, color-mix(in srgb, var(--c-progress-bg) 95%, white) 100%);
             padding: var(--spacing-lg);
             border-radius: 10px;
@@ -181,12 +233,14 @@
             overflow: hidden;
         }
 
-        .network-card:hover, .peer-card:hover {
+        .network-card:hover,
+        .peer-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
-        .network-card .name, .peer-card .name {
+        .network-card .name,
+        .peer-card .name {
             font-weight: 600;
             font-size: var(--font-size-base);
             color: var(--c-heading);
@@ -280,7 +334,7 @@
         .table-responsive {
             overflow-x: auto;
             border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .table {
@@ -289,7 +343,8 @@
             background: var(--c-widget);
         }
 
-        .table th, .table td {
+        .table th,
+        .table td {
             text-align: left;
             padding: var(--spacing-md);
             border-bottom: 1px solid var(--c-border);
@@ -346,14 +401,14 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: left 0.5s;
         }
 
         .view-logs-btn:hover {
             background: linear-gradient(135deg, var(--c-border) 0%, color-mix(in srgb, var(--c-border) 90%, white) 100%);
             transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .view-logs-btn:hover::before {
@@ -362,7 +417,7 @@
 
         .view-logs-btn:active {
             transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .view-logs-btn:focus {
@@ -372,14 +427,17 @@
 
         /* Style for the expandable row that contains the logs */
         .service-log-row td {
-            background-color: var(--c-bg); /* Use the main background color */
-            padding: 0 !important; /* Remove default padding to let the pre handle it */
+            background-color: var(--c-bg);
+            /* Use the main background color */
+            padding: 0 !important;
+            /* Remove default padding to let the pre handle it */
         }
 
         /* Style for the preformatted log content itself */
         .service-log-content {
             margin: 0;
-            background-color: rgba(0, 0, 0, 0.1); /* A slightly darker shade for the pre block */
+            background-color: rgba(0, 0, 0, 0.1);
+            /* A slightly darker shade for the pre block */
             padding: 1em;
             font-size: 0.85em;
             color: var(--c-text);
@@ -409,7 +467,8 @@
                 padding: var(--spacing-md);
             }
 
-            .table th, .table td {
+            .table th,
+            .table td {
                 padding: var(--spacing-sm);
                 font-size: var(--font-size-sm);
             }
@@ -433,7 +492,8 @@
                 gap: var(--spacing-md);
             }
 
-            .network-grid, .ts-peers-grid {
+            .network-grid,
+            .ts-peers-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -473,13 +533,18 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             animation: loading-shimmer 1.5s infinite;
         }
 
         @keyframes loading-shimmer {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(100%);
+            }
         }
 
         /* Focus improvements for accessibility */
@@ -496,6 +561,7 @@
 
         /* Reduced motion support */
         @media (prefers-reduced-motion: reduce) {
+
             *,
             *::before,
             *::after {
@@ -506,27 +572,39 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>NixOS <span id="last-update-time" class="last-update"></span></h1>
 
         <div class="widget" id="general-widget">
-            <h2><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 5H7a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg> General</h2>
+            <h2><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <path d="M17 5H7a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z" />
+                    <line x1="12" y1="19" x2="12" y2="23" />
+                    <line x1="8" y1="23" x2="16" y2="23" />
+                </svg> General</h2>
             <dl class="widget-stats">
-                <dt>Load Average</dt><dd id="general-load-avg">Loading...</dd>
-                <dt>Uptime</dt><dd id="general-uptime">Loading...</dd>
+                <dt>Load Average</dt>
+                <dd id="general-load-avg">Loading...</dd>
+                <dt>Uptime</dt>
+                <dd id="general-uptime">Loading...</dd>
             </dl>
             <h3>Disk Space</h3>
             <p id="disk-usage-text">Loading...</p>
-            <div class="progress-bar"><div id="disk-progress-fill" class="progress-fill"></div></div>
+            <div class="progress-bar">
+                <div id="disk-progress-fill" class="progress-fill"></div>
+            </div>
             <h3>RAM</h3>
             <p id="ram-usage-text">Loading...</p>
-            <div class="progress-bar"><div id="ram-progress-fill" class="progress-fill"></div></div>
+            <div class="progress-bar">
+                <div id="ram-progress-fill" class="progress-fill"></div>
+            </div>
         </div>
 
-        <div class="widget" id="sensors-widget">
-            <h2>System Sensors</h2>
-            <div class="table-responsive"><table class="table sensors-table"><thead><tr><th>Sensor</th><th>Value</th></tr></thead><tbody id="sensors-table-body"></tbody></table></div>
+        <div id="sensors-widgets-container">
+            <!-- Multiple sensor widgets will be dynamically created here -->
         </div>
 
         <div class="widget full-width" id="ts-peers-widget">
@@ -535,13 +613,31 @@
         </div>
 
         <div class="widget full-width" id="cpu-widget">
-            <h2><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg> CPU Usage <span id="total-cpu-percentage"></span></h2>
-            <div class="progress-bar"><div id="cpu-total-fill" class="progress-fill"></div></div>
+            <h2><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
+                    <rect x="9" y="9" width="6" height="6" />
+                    <line x1="9" y1="1" x2="9" y2="4" />
+                    <line x1="15" y1="1" x2="15" y2="4" />
+                    <line x1="9" y1="20" x2="9" y2="23" />
+                    <line x1="15" y1="20" x2="15" y2="23" />
+                    <line x1="20" y1="9" x2="23" y2="9" />
+                    <line x1="20" y1="14" x2="23" y2="14" />
+                    <line x1="1" y1="9" x2="4" y2="9" />
+                    <line x1="1" y1="14" x2="4" y2="14" />
+                </svg> CPU Usage <span id="total-cpu-percentage"></span></h2>
+            <div class="progress-bar">
+                <div id="cpu-total-fill" class="progress-fill"></div>
+            </div>
             <div class="cpu-grid"></div>
         </div>
 
         <div class="widget full-width" id="net-widget">
-            <h2><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0M12 17v-5"/></svg> Network Interfaces</h2>
+            <h2><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                        d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3zm-8.27 4a2 2 0 0 1-3.46 0M12 17v-5" />
+                </svg> Network Interfaces</h2>
             <div id="network-interfaces-grid" class="network-grid"></div>
         </div>
 
@@ -557,17 +653,53 @@
 
         <div class="widget full-width" id="disk-io-widget">
             <h2>Disk I/O</h2>
-            <div class="table-responsive"><table class="table sensors-table"><thead><tr><th>Device</th><th>Read IOPS</th><th>Write IOPS</th><th>Read (MB/s)</th><th>Write (MB/s)</th><th>Utilization (%)</th></tr></thead><tbody id="disk-io-table-body"></tbody></table></div>
+            <div class="table-responsive">
+                <table class="table sensors-table">
+                    <thead>
+                        <tr>
+                            <th>Device</th>
+                            <th>Read IOPS</th>
+                            <th>Write IOPS</th>
+                            <th>Read (MB/s)</th>
+                            <th>Write (MB/s)</th>
+                            <th>Utilization (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="disk-io-table-body"></tbody>
+                </table>
+            </div>
         </div>
 
         <div class="widget full-width" id="cgroup-widget">
             <h2>Top Processes (CGroups)</h2>
-            <div class="table-responsive"><table class="table sensors-table"><thead><tr><th>Path</th><th>Tasks</th><th>CPU</th><th>Memory</th></tr></thead><tbody id="cgroup-table-body"></tbody></table></div>
+            <div class="table-responsive">
+                <table class="table sensors-table">
+                    <thead>
+                        <tr>
+                            <th>Path</th>
+                            <th>Tasks</th>
+                            <th>CPU</th>
+                            <th>Memory</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cgroup-table-body"></tbody>
+                </table>
+            </div>
         </div>
 
         <div class="widget full-width" id="services-widget">
             <h2>Running Services</h2>
-            <div class="table-responsive"><table class="table sensors-table"><thead><tr><th>Unit</th><th>Description</th></tr></thead><tbody id="services-table-body"></tbody></table></div>
+            <div class="table-responsive">
+                <table class="table sensors-table">
+                    <thead>
+                        <tr>
+                            <th>Unit</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody id="services-table-body"></tbody>
+                </table>
+            </div>
         </div>
 
         <div class="widget full-width" id="errors-widget">
@@ -580,7 +712,9 @@
     <template id="cpu-core-template">
         <div class="cpu-core" data-key="">
             <div class="name"></div>
-            <div class="progress-bar"><div class="progress-fill"></div></div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
             <div class="usage"></div>
         </div>
     </template>
@@ -647,496 +781,543 @@
     </template>
 
     <script>
-const DashboardApp = {
-    // Configuration constants
-    RECONNECT_DELAY_MIN: 1000,
-    RECONNECT_DELAY_MAX: 60000,
-    ANIMATION_DURATION: 300,
+        const DashboardApp = {
+            // Configuration constants
+            RECONNECT_DELAY_MIN: 1000,
+            RECONNECT_DELAY_MAX: 60000,
+            ANIMATION_DURATION: 300,
 
-    // State management
-    state: {
-        isConnected: false,
-        reconnectDelay: 1000,
-        lastUpdateTime: null,
-    },
-
-    // DOM element cache
-    elements: {},
-
-    init() {
-        this.cacheElements();
-        this.setupEventListeners();
-        this.connectEventSource();
-    },
-
-    cacheElements() {
-        // Cache all DOM elements for better performance
-        this.elements = {
-            lastUpdate: document.getElementById('last-update-time'),
-            errorContainer: document.getElementById('error-messages'),
-            general: {
-                load: document.getElementById('general-load-avg'),
-                uptime: document.getElementById('general-uptime'),
+            // State management
+            state: {
+                isConnected: false,
+                reconnectDelay: 1000,
+                lastUpdateTime: null,
             },
-            disk: {
-                text: document.getElementById('disk-usage-text'),
-                fill: document.getElementById('disk-progress-fill'),
-            },
-            ram: {
-                text: document.getElementById('ram-usage-text'),
-                fill: document.getElementById('ram-progress-fill'),
-            },
-            cpu: {
-                grid: document.querySelector('#cpu-widget .cpu-grid'),
-                totalFill: document.getElementById('cpu-total-fill'),
-                totalPercent: document.getElementById('total-cpu-percentage'),
-                template: document.getElementById('cpu-core-template'),
-            },
-            sensors: {
-                tbody: document.getElementById('sensors-table-body'),
-                template: document.getElementById('table-row-template'),
-            },
-            services: {
-                tbody: document.getElementById('services-table-body'),
-                template: document.getElementById('service-row-template'),
-            },
-            cgroup: {
-                tbody: document.getElementById('cgroup-table-body'),
-                template: document.getElementById('table-row-template'),
-            },
-            network: {
-                grid: document.getElementById('network-interfaces-grid'),
-                template: document.getElementById('network-interface-template'),
-            },
-            netDev: {
-                grid: document.getElementById('net-dev-grid'),
-                template: document.getElementById('net-dev-template'),
-            },
-            tcpConns: {
-                grid: document.getElementById('tcp-conns-grid'),
-                template: document.getElementById('tcp-conn-template'),
-            },
-            tsPeers: {
-                grid: document.getElementById('ts-peers-grid'),
-                template: document.getElementById('peer-card-template'),
-                traffic: document.getElementById('ts-traffic-display'),
-            },
-            diskIo: {
-                tbody: document.getElementById('disk-io-table-body'),
-                template: document.getElementById('table-row-template'),
-            },
-            errorTemplate: document.getElementById('error-message-template'),
-            serviceLogTemplate: document.getElementById('service-log-template'),
-        };
-    },
 
-    setupEventListeners() {
-        // Setup global event listeners
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                this.handleVisibilityChange(false);
-            } else {
-                this.handleVisibilityChange(true);
-            }
-        });
+            // DOM element cache
+            elements: {},
 
-        // Handle online/offline events
-        window.addEventListener('online', () => this.handleConnectionChange(true));
-        window.addEventListener('offline', () => this.handleConnectionChange(false));
-    },
-
-    handleVisibilityChange(isVisible) {
-        // Pause/resume updates when tab becomes invisible/visible
-        // This helps with performance and battery life
-        if (isVisible && !this.state.isConnected) {
-            this.connectEventSource();
-        }
-    },
-
-    handleConnectionChange(isOnline) {
-        if (isOnline && !this.state.isConnected) {
-            this.connectEventSource();
-        }
-        this.updateConnectionStatus(isOnline);
-    },
-
-    updateConnectionStatus(isOnline) {
-        document.body.style.opacity = isOnline ? '1' : '0.7';
-        document.title = isOnline ? "NixOS" : "[Offline] NixOS";
-    },
-
-    connectEventSource() {
-        this.updateConnectionStatus(false);
-
-        const evtSource = new EventSource("/stream");
-
-        evtSource.onopen = () => {
-            this.state.reconnectDelay = this.RECONNECT_DELAY_MIN;
-            this.state.isConnected = true;
-            this.updateConnectionStatus(true);
-        };
-
-        evtSource.onmessage = (event) => {
-            try {
-                this.update(JSON.parse(event.data));
-            } catch (e) {
-                console.error("[SSE] Failed to parse event data:", event.data, e);
-                this.showError("Failed to parse server data");
-            }
-        };
-
-        evtSource.onerror = (error) => {
-            console.warn("[SSE] Connection error:", error);
-            evtSource.close();
-            this.state.isConnected = false;
-            this.scheduleReconnect();
-        };
-    },
-
-    scheduleReconnect() {
-        setTimeout(() => {
-            if (!this.state.isConnected) {
+            init() {
+                this.cacheElements();
+                this.setupEventListeners();
                 this.connectEventSource();
-            }
-        }, this.state.reconnectDelay);
+            },
 
-        // Exponential backoff with jitter
-        this.state.reconnectDelay = Math.min(
-            this.RECONNECT_DELAY_MAX,
-            this.state.reconnectDelay * 2 + Math.random() * 1000
-        );
-    },
+            cacheElements() {
+                // Cache all DOM elements for better performance
+                this.elements = {
+                    lastUpdate: document.getElementById('last-update-time'),
+                    errorContainer: document.getElementById('error-messages'),
+                    general: {
+                        load: document.getElementById('general-load-avg'),
+                        uptime: document.getElementById('general-uptime'),
+                    },
+                    disk: {
+                        text: document.getElementById('disk-usage-text'),
+                        fill: document.getElementById('disk-progress-fill'),
+                    },
+                    ram: {
+                        text: document.getElementById('ram-usage-text'),
+                        fill: document.getElementById('ram-progress-fill'),
+                    },
+                    cpu: {
+                        grid: document.querySelector('#cpu-widget .cpu-grid'),
+                        totalFill: document.getElementById('cpu-total-fill'),
+                        totalPercent: document.getElementById('total-cpu-percentage'),
+                        template: document.getElementById('cpu-core-template'),
+                    },
+                    sensors: {
+                        container: document.getElementById('sensors-widgets-container'),
+                    },
+                    services: {
+                        tbody: document.getElementById('services-table-body'),
+                        template: document.getElementById('service-row-template'),
+                    },
+                    cgroup: {
+                        tbody: document.getElementById('cgroup-table-body'),
+                        template: document.getElementById('table-row-template'),
+                    },
+                    network: {
+                        grid: document.getElementById('network-interfaces-grid'),
+                        template: document.getElementById('network-interface-template'),
+                    },
+                    netDev: {
+                        grid: document.getElementById('net-dev-grid'),
+                        template: document.getElementById('net-dev-template'),
+                    },
+                    tcpConns: {
+                        grid: document.getElementById('tcp-conns-grid'),
+                        template: document.getElementById('tcp-conn-template'),
+                    },
+                    tsPeers: {
+                        grid: document.getElementById('ts-peers-grid'),
+                        template: document.getElementById('peer-card-template'),
+                        traffic: document.getElementById('ts-traffic-display'),
+                    },
+                    diskIo: {
+                        tbody: document.getElementById('disk-io-table-body'),
+                        template: document.getElementById('table-row-template'),
+                    },
+                    errorTemplate: document.getElementById('error-message-template'),
+                    serviceLogTemplate: document.getElementById('service-log-template'),
+                };
+            },
 
-    showError(message) {
-        // Non-intrusive error display
-        console.error(message);
-        // Could add a toast notification here
-    },
+            setupEventListeners() {
+                // Setup global event listeners
+                document.addEventListener('visibilitychange', () => {
+                    if (document.hidden) {
+                        this.handleVisibilityChange(false);
+                    } else {
+                        this.handleVisibilityChange(true);
+                    }
+                });
 
-    update(data) {
-        // Use requestAnimationFrame for smooth updates
-        requestAnimationFrame(() => {
-            this.updateSync(data);
-        });
-    },
+                // Handle online/offline events
+                window.addEventListener('online', () => this.handleConnectionChange(true));
+                window.addEventListener('offline', () => this.handleConnectionChange(false));
+            },
 
-    updateSync(data) {
-        // Batch DOM updates for better performance
-        const updates = [];
+            handleVisibilityChange(isVisible) {
+                // Pause/resume updates when tab becomes invisible/visible
+                // This helps with performance and battery life
+                if (isVisible && !this.state.isConnected) {
+                    this.connectEventSource();
+                }
+            },
 
-        if (data.timestamp) {
-            this.state.lastUpdateTime = data.timestamp;
-            updates.push(() => {
-                this.elements.lastUpdate.textContent = `(Last Update: ${this.formatTimeAgo(data.timestamp)})`;
-            });
-        }
+            handleConnectionChange(isOnline) {
+                if (isOnline && !this.state.isConnected) {
+                    this.connectEventSource();
+                }
+                this.updateConnectionStatus(isOnline);
+            },
 
-        if (data.load_avg) {
-            updates.push(() => {
-                this.elements.general.load.textContent =
-                    `${data.load_avg.one_min}, ${data.load_avg.five_min}, ${data.load_avg.fifteen_min}`;
-            });
-        }
+            updateConnectionStatus(isOnline) {
+                document.body.style.opacity = isOnline ? '1' : '0.7';
+                document.title = isOnline ? "NixOS" : "[Offline] NixOS";
+            },
 
-        if (data.uptime_info) {
-            updates.push(() => {
-                this.elements.general.uptime.textContent = data.uptime_info.formatted_uptime;
-            });
-        }
+            connectEventSource() {
+                this.updateConnectionStatus(false);
 
-        // Execute all updates in a single batch
-        updates.forEach(update => update());
+                const evtSource = new EventSource("/stream");
 
-        // Update complex widgets
-        this.updateBarWidget(data.disk_info, this.elements.disk.text, this.elements.disk.fill);
-        this.updateBarWidget(data.ram_info, this.elements.ram.text, this.elements.ram.fill);
-        this.updateCpuWidget(data.cpu_usages);
+                evtSource.onopen = () => {
+                    this.state.reconnectDelay = this.RECONNECT_DELAY_MIN;
+                    this.state.isConnected = true;
+                    this.updateConnectionStatus(true);
+                };
 
-        if (data.tailscale_metrics) {
-            this.elements.tsPeers.traffic.textContent =
-                `(${data.tailscale_metrics.total_rx || 0} MB Rx / ${data.tailscale_metrics.total_tx || 0} MB Tx)`;
-        }
+                evtSource.onmessage = (event) => {
+                    try {
+                        this.update(JSON.parse(event.data));
+                    } catch (e) {
+                        console.error("[SSE] Failed to parse event data:", event.data, e);
+                        this.showError("Failed to parse server data");
+                    }
+                };
 
-        // Update lists with improved performance
-        this.updateLists(data);
-        this.updateErrorMessages(data.errors);
-    },
+                evtSource.onerror = (error) => {
+                    console.warn("[SSE] Connection error:", error);
+                    evtSource.close();
+                    this.state.isConnected = false;
+                    this.scheduleReconnect();
+                };
+            },
 
-    updateLists(data) {
-        // Batch list updates for better performance
-        const listUpdates = [
-            [this.elements.network.grid, this.elements.network.template, data.network_info, 'name', this.updateNetworkCard],
-            [this.elements.netDev.grid, this.elements.netDev.template, data.net_dev_info, 'interface', this.updateNetDevCard],
-            [this.elements.tcpConns.grid, this.elements.tcpConns.template, data.tcp_connections, 'local_address', this.updateTcpConnCard],
-            [this.elements.tsPeers.grid, this.elements.tsPeers.template, data.tailscale_peers, 'ip', this.updatePeerCard],
-            [this.elements.sensors.tbody, this.elements.sensors.template, data.sensor_data, 'name', this.updateSensorRow],
-            [this.elements.services.tbody, this.elements.services.template, data.services, 'unit', this.updateServiceRow],
-            [this.elements.cgroup.tbody, this.elements.cgroup.template, data.cgroup_data, 'path', this.updateCgroupRow],
-            [this.elements.diskIo.tbody, this.elements.diskIo.template, data.disk_io_info, 'device', this.updateDiskIoRow],
-        ];
+            scheduleReconnect() {
+                setTimeout(() => {
+                    if (!this.state.isConnected) {
+                        this.connectEventSource();
+                    }
+                }, this.state.reconnectDelay);
 
-        listUpdates.forEach(([container, template, data, keyField, updateFn]) => {
-            this.upsertList(container, template, data, keyField, updateFn);
-        });
-    },
+                // Exponential backoff with jitter
+                this.state.reconnectDelay = Math.min(
+                    this.RECONNECT_DELAY_MAX,
+                    this.state.reconnectDelay * 2 + Math.random() * 1000
+                );
+            },
 
-    // --- WIDGET-SPECIFIC UPDATE LOGIC ---
-    updateBarWidget(info, textEl, fillEl) {
-        if (info && info.total) {
-            textEl.textContent = `${info.used} of ${info.total}`;
-            const percent = parseFloat(info.percentage);
-            fillEl.style.transform = `scaleX(${percent / 100})`;
-            fillEl.style.backgroundColor = this.getBarColor(percent);
-        }
-    },
-    updateCpuWidget(cpuUsages) {
-        if (!Array.isArray(cpuUsages)) return;
-        const totalCpu = cpuUsages.find(c => c.core === 'Total');
-        if (totalCpu) {
-            const totalUsage = parseFloat(totalCpu.usage);
-            this.elements.cpu.totalFill.style.transform = `scaleX(${totalUsage / 100})`;
-            this.elements.cpu.totalFill.style.backgroundColor = this.getBarColor(totalUsage);
-            this.elements.cpu.totalPercent.textContent = `${totalUsage.toFixed(1)}%`;
-        }
-        this.upsertList(this.elements.cpu.grid, this.elements.cpu.template, cpuUsages.filter(c => c.core !== 'Total'), 'core', this.updateCpuCore);
-    },
-    updateCpuCore(el, item) {
-        const usage = parseFloat(item.usage);
-        el.querySelector('.name').textContent = item.core;
-        el.querySelector('.usage').textContent = `${usage.toFixed(1)}%`;
-        const fillEl = el.querySelector('.progress-fill');
-        fillEl.style.transform = `scaleX(${usage / 100})`;
-        fillEl.style.backgroundColor = this.getBarColor(usage);
-    },
-    updateNetworkCard(el, item) {
-        el.querySelector('.name').textContent = item.name;
-        el.querySelector('.ip-address').textContent = item.ip;
-        el.querySelector('.state').textContent = item.state;
-    },
-    updateNetDevCard(el, item) {
-        el.querySelector('.name').textContent = item.interface;
-        el.querySelector('.rx-bytes').textContent = `${(item.rx_bytes / (1024 * 1024)).toFixed(2)} MB`;
-        el.querySelector('.tx-bytes').textContent = `${(item.tx_bytes / (1024 * 1024)).toFixed(2)} MB`;
-    },
-    updateTcpConnCard(el, item) {
-        el.querySelector('.name').textContent = item.state;
-        el.querySelector('.address-pair').textContent = `${item.local_address} -> ${item.peer_address}`;
-        el.querySelector('.recv-q').textContent = item.recv_q;
-        el.querySelector('.send-q').textContent = item.send_q;
-    },
-    updatePeerCard(el, item) {
-        el.querySelector('.name').textContent = item.name;
-        el.querySelector('.details').textContent = item.os ? `${item.ip} • ${item.os}` : item.ip;
-        el.querySelector('.status-text').textContent = item.status;
-        el.querySelector('.status-dot').classList.toggle('online', item.online);
-    },
-    updateSensorRow(tr, item) {
-        const displayName = item.name.replace(/\s*\([^)]*\)/g, '');
-        let barHtml = '';
-        if (item.min !== null && item.max !== null && item.current !== null && item.max > item.min) {
-            const displayPercent = Math.max(0, Math.min(100, ((item.current - item.min) / (item.max - item.min)) * 100));
-            barHtml = `<div class="progress-bar"><div class="progress-fill" style="transform: scaleX(${displayPercent / 100}); background-color: ${this.getBarColor(displayPercent)};"></div></div>`;
-        }
-        this.updateTableRow(tr, [`<td>${displayName}</td>`, `<td>${item.value} ${item.unit}${barHtml}</td>`]);
-    },
-    updateServiceRow(tr, item) {
-        this.updateTableRow(tr, [`<td>${item.unit}</td>`, `<td>${item.description}</td>`, `<td><button class="view-logs-btn">View Logs</button></td>`]);
-        const viewLogsBtn = tr.querySelector('.view-logs-btn');
-        if (viewLogsBtn) {
-            viewLogsBtn.onclick = (event) => this.handleViewLogsClick(event);
-        }
-    },
-    updateCgroupRow(tr, item) {
-        this.updateTableRow(tr, [`<td>${item.path}</td>`, `<td>${item.tasks}</td>`, `<td>${item.cpu}</td>`, `<td>${item.memory}</td>`]);
-    },
-    updateErrorMessages(errors) {
-        this.upsertList(this.elements.errorContainer, this.elements.errorTemplate, (errors || []).map(e => ({ msg: e })), 'msg', (el, item) => {
-            el.textContent = item.msg;
-        });
-    },
-    updateDiskIoRow(tr, item) {
-        // Format helpers
-        const formatNumber = (num, decimals = 2) => (typeof num === 'number' ? num.toFixed(decimals) : '0.00');
-        const formatSectors = (sectors) => {
-            if (typeof sectors !== 'number') return '-';
-            // Linux sectors are 512 bytes
-            const bytes = sectors * 512;
-            if (bytes >= 1024 * 1024 * 1024) return (bytes / (1024 * 1024 * 1024)).toFixed(2) + ' GB';
-            if (bytes >= 1024 * 1024) return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
-            if (bytes >= 1024) return (bytes / 1024).toFixed(2) + ' KB';
-            return bytes + ' B';
-        };
-        const formatMs = (ms) => {
-            if (typeof ms !== 'number') return '-';
-            if (ms >= 60000) return (ms / 60000).toFixed(2) + ' min';
-            if (ms >= 1000) return (ms / 1000).toFixed(2) + ' s';
-            return ms + ' ms';
-        };
-        // Show total usage from DiskStats fields, with tooltips for raw values
-        const totalStats = `<div style='font-size:0.85em;opacity:0.7;'>
+            showError(message) {
+                // Non-intrusive error display
+                console.error(message);
+                // Could add a toast notification here
+            },
+
+            update(data) {
+                // Use requestAnimationFrame for smooth updates
+                requestAnimationFrame(() => {
+                    this.updateSync(data);
+                });
+            },
+
+            updateSync(data) {
+                // Batch DOM updates for better performance
+                const updates = [];
+
+                if (data.timestamp) {
+                    this.state.lastUpdateTime = data.timestamp;
+                    updates.push(() => {
+                        this.elements.lastUpdate.textContent = `(Last Update: ${this.formatTimeAgo(data.timestamp)})`;
+                    });
+                }
+
+                if (data.load_avg) {
+                    updates.push(() => {
+                        this.elements.general.load.textContent =
+                            `${data.load_avg.one_min}, ${data.load_avg.five_min}, ${data.load_avg.fifteen_min}`;
+                    });
+                }
+
+                if (data.uptime_info) {
+                    updates.push(() => {
+                        this.elements.general.uptime.textContent = data.uptime_info.formatted_uptime;
+                    });
+                }
+
+                // Execute all updates in a single batch
+                updates.forEach(update => update());
+
+                // Update complex widgets
+                this.updateBarWidget(data.disk_info, this.elements.disk.text, this.elements.disk.fill);
+                this.updateBarWidget(data.ram_info, this.elements.ram.text, this.elements.ram.fill);
+                this.updateCpuWidget(data.cpu_usages);
+
+                if (data.tailscale_metrics) {
+                    this.elements.tsPeers.traffic.textContent =
+                        `(${data.tailscale_metrics.total_rx || 0} MB Rx / ${data.tailscale_metrics.total_tx || 0} MB Tx)`;
+                }
+
+                // Update lists with improved performance
+                this.updateLists(data);
+                this.updateErrorMessages(data.errors);
+            },
+
+            updateLists(data) {
+                // Batch list updates for better performance
+                const listUpdates = [
+                    [this.elements.network.grid, this.elements.network.template, data.network_info, 'name', this.updateNetworkCard],
+                    [this.elements.netDev.grid, this.elements.netDev.template, data.net_dev_info, 'interface', this.updateNetDevCard],
+                    [this.elements.tcpConns.grid, this.elements.tcpConns.template, data.tcp_connections, 'local_address', this.updateTcpConnCard],
+                    [this.elements.tsPeers.grid, this.elements.tsPeers.template, data.tailscale_peers, 'ip', this.updatePeerCard],
+                    [this.elements.services.tbody, this.elements.services.template, data.services, 'unit', this.updateServiceRow],
+                    [this.elements.cgroup.tbody, this.elements.cgroup.template, data.cgroup_data, 'path', this.updateCgroupRow],
+                    [this.elements.diskIo.tbody, this.elements.diskIo.template, data.disk_io_info, 'device', this.updateDiskIoRow],
+                ];
+
+                listUpdates.forEach(([container, template, data, keyField, updateFn]) => {
+                    this.upsertList(container, template, data, keyField, updateFn);
+                });
+
+                // Handle sensors separately to create multiple widgets
+                this.updateSensorWidgets(data.sensor_data);
+            },
+
+            // --- WIDGET-SPECIFIC UPDATE LOGIC ---
+            updateBarWidget(info, textEl, fillEl) {
+                if (info && info.total) {
+                    textEl.textContent = `${info.used} of ${info.total}`;
+                    const percent = parseFloat(info.percentage);
+                    fillEl.style.transform = `scaleX(${percent / 100})`;
+                    fillEl.style.backgroundColor = this.getBarColor(percent);
+                }
+            },
+            updateCpuWidget(cpuUsages) {
+                if (!Array.isArray(cpuUsages)) return;
+                const totalCpu = cpuUsages.find(c => c.core === 'Total');
+                if (totalCpu) {
+                    const totalUsage = parseFloat(totalCpu.usage);
+                    this.elements.cpu.totalFill.style.transform = `scaleX(${totalUsage / 100})`;
+                    this.elements.cpu.totalFill.style.backgroundColor = this.getBarColor(totalUsage);
+                    this.elements.cpu.totalPercent.textContent = `${totalUsage.toFixed(1)}%`;
+                }
+                this.upsertList(this.elements.cpu.grid, this.elements.cpu.template, cpuUsages.filter(c => c.core !== 'Total'), 'core', this.updateCpuCore);
+            },
+            updateCpuCore(el, item) {
+                const usage = parseFloat(item.usage);
+                el.querySelector('.name').textContent = item.core;
+                el.querySelector('.usage').textContent = `${usage.toFixed(1)}%`;
+                const fillEl = el.querySelector('.progress-fill');
+                fillEl.style.transform = `scaleX(${usage / 100})`;
+                fillEl.style.backgroundColor = this.getBarColor(usage);
+            },
+            updateNetworkCard(el, item) {
+                el.querySelector('.name').textContent = item.name;
+                el.querySelector('.ip-address').textContent = item.ip;
+                el.querySelector('.state').textContent = item.state;
+            },
+            updateNetDevCard(el, item) {
+                el.querySelector('.name').textContent = item.interface;
+                el.querySelector('.rx-bytes').textContent = `${(item.rx_bytes / (1024 * 1024)).toFixed(2)} MB`;
+                el.querySelector('.tx-bytes').textContent = `${(item.tx_bytes / (1024 * 1024)).toFixed(2)} MB`;
+            },
+            updateTcpConnCard(el, item) {
+                el.querySelector('.name').textContent = item.state;
+                el.querySelector('.address-pair').textContent = `${item.local_address} -> ${item.peer_address}`;
+                el.querySelector('.recv-q').textContent = item.recv_q;
+                el.querySelector('.send-q').textContent = item.send_q;
+            },
+            updatePeerCard(el, item) {
+                el.querySelector('.name').textContent = item.name;
+                el.querySelector('.details').textContent = item.os ? `${item.ip} • ${item.os}` : item.ip;
+                el.querySelector('.status-text').textContent = item.status;
+                el.querySelector('.status-dot').classList.toggle('online', item.online);
+            },
+            updateSensorRow(tr, item) {
+                const displayName = item.name.replace(/\s*\([^)]*\)/g, '');
+                let barHtml = '';
+                if (item.min !== null && item.max !== null && item.current !== null && item.max > item.min) {
+                    const displayPercent = Math.max(0, Math.min(100, ((item.current - item.min) / (item.max - item.min)) * 100));
+                    barHtml = `<div class="progress-bar"><div class="progress-fill" style="transform: scaleX(${displayPercent / 100}); background-color: ${this.getBarColor(displayPercent)};"></div></div>`;
+                }
+                this.updateTableRow(tr, [`<td>${displayName}</td>`, `<td>${item.value} ${item.unit}${barHtml}</td>`]);
+            },
+
+            updateSensorWidgets(sensorData) {
+                // Group sensors by device name (extracted from sensor name)
+                const deviceGroups = {};
+                sensorData.forEach(sensor => {
+                    // Extract device name - everything before the first colon
+                    const parts = sensor.name.split(':');
+                    const deviceName = parts.length > 1 ? parts[0].trim() : 'System';
+                    const shortName = parts.length > 1 ? parts.slice(1).join(':').trim() : sensor.name;
+
+                    if (!deviceGroups[deviceName]) {
+                        deviceGroups[deviceName] = [];
+                    }
+                    deviceGroups[deviceName].push({ ...sensor, name: shortName });
+                });
+
+                // Clear existing widgets
+                this.elements.sensors.container.innerHTML = '';
+
+                // Create widget for each device
+                Object.entries(deviceGroups).forEach(([deviceName, sensors]) => {
+                    const widget = document.createElement('div');
+                    widget.className = 'widget';
+                    widget.innerHTML = `
+                <h2>${deviceName} Sensors</h2>
+                <div class="table-responsive">
+                    <table class="table sensors-table">
+                        <thead><tr><th>Sensor</th><th>Value</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            `;
+
+                    const tbody = widget.querySelector('tbody');
+                    const template = document.getElementById('table-row-template');
+
+                    sensors.forEach(sensor => {
+                        const row = template.content.cloneNode(true).children[0];
+                        this.updateSensorRow(row, sensor);
+                        tbody.appendChild(row);
+                    });
+
+                    this.elements.sensors.container.appendChild(widget);
+                });
+            },
+            updateServiceRow(tr, item) {
+                this.updateTableRow(tr, [`<td>${item.unit}</td>`, `<td>${item.description}</td>`, `<td><button class="view-logs-btn">View Logs</button></td>`]);
+                const viewLogsBtn = tr.querySelector('.view-logs-btn');
+                if (viewLogsBtn) {
+                    viewLogsBtn.onclick = (event) => this.handleViewLogsClick(event);
+                }
+            },
+            updateCgroupRow(tr, item) {
+                this.updateTableRow(tr, [`<td>${item.path}</td>`, `<td>${item.tasks}</td>`, `<td>${item.cpu}</td>`, `<td>${item.memory}</td>`]);
+            },
+            updateErrorMessages(errors) {
+                this.upsertList(this.elements.errorContainer, this.elements.errorTemplate, (errors || []).map(e => ({ msg: e })), 'msg', (el, item) => {
+                    el.textContent = item.msg;
+                });
+            },
+            updateDiskIoRow(tr, item) {
+                // Format helpers
+                const formatNumber = (num, decimals = 2) => (typeof num === 'number' ? num.toFixed(decimals) : '0.00');
+                const formatSectors = (sectors) => {
+                    if (typeof sectors !== 'number') return '-';
+                    // Linux sectors are 512 bytes
+                    const bytes = sectors * 512;
+                    if (bytes >= 1024 * 1024 * 1024) return (bytes / (1024 * 1024 * 1024)).toFixed(2) + ' GB';
+                    if (bytes >= 1024 * 1024) return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+                    if (bytes >= 1024) return (bytes / 1024).toFixed(2) + ' KB';
+                    return bytes + ' B';
+                };
+                const formatMs = (ms) => {
+                    if (typeof ms !== 'number') return '-';
+                    if (ms >= 60000) return (ms / 60000).toFixed(2) + ' min';
+                    if (ms >= 1000) return (ms / 1000).toFixed(2) + ' s';
+                    return ms + ' ms';
+                };
+                // Show total usage from DiskStats fields, with tooltips for raw values
+                const totalStats = `<div style='font-size:0.85em;opacity:0.7;'>
             Reads: <span title="${item.total_reads_completed ?? '-'} raw">${formatNumber(item.total_reads_completed, 0)}</span> |
             Sectors Read: <span title="${item.total_sectors_read ?? '-'} raw">${formatSectors(item.total_sectors_read)}</span><br>
             Writes: <span title="${item.total_writes_completed ?? '-'} raw">${formatNumber(item.total_writes_completed, 0)}</span> |
             Sectors Written: <span title="${item.total_sectors_written ?? '-'} raw">${formatSectors(item.total_sectors_written)}</span><br>
             Time I/O: <span title="${item.total_time_spent_io ?? '-'} ms raw">${formatMs(item.total_time_spent_io)}</span>
         </div>`;
-        this.updateTableRow(tr, [
-            `<td>${item.device || 'Unknown'}${totalStats}</td>`,
-            `<td>${formatNumber(item.read_iops)}</td>`,
-            `<td>${formatNumber(item.write_iops)}</td>`,
-            `<td>${formatNumber(item.read_mb_s)}</td>`,
-            `<td>${formatNumber(item.write_mb_s)}</td>`,
-            `<td>${formatNumber(item.utilization)}%</td>`,
-        ]);
-    },
+                this.updateTableRow(tr, [
+                    `<td>${item.device || 'Unknown'}${totalStats}</td>`,
+                    `<td>${formatNumber(item.read_iops)}</td>`,
+                    `<td>${formatNumber(item.write_iops)}</td>`,
+                    `<td>${formatNumber(item.read_mb_s)}</td>`,
+                    `<td>${formatNumber(item.write_mb_s)}</td>`,
+                    `<td>${formatNumber(item.utilization)}%</td>`,
+                ]);
+            },
 
-    async handleViewLogsClick(event) {
-        const button = event.target;
-        const row = button.closest('tr');
-        const unit = row.dataset.key;
-        const logRowKey = `log-${unit}`;
+            async handleViewLogsClick(event) {
+                const button = event.target;
+                const row = button.closest('tr');
+                const unit = row.dataset.key;
+                const logRowKey = `log-${unit}`;
 
-        // Add loading state
-        const originalText = button.textContent;
-        button.textContent = 'Loading...';
-        button.disabled = true;
+                // Add loading state
+                const originalText = button.textContent;
+                button.textContent = 'Loading...';
+                button.disabled = true;
 
-        let logRow = row.nextElementSibling;
-        if (logRow && logRow.classList.contains('service-log-row')) {
-            // Toggle visibility if log row already exists
-            logRow.remove();
-            button.textContent = originalText;
-            button.disabled = false;
-            return;
-        }
+                let logRow = row.nextElementSibling;
+                if (logRow && logRow.classList.contains('service-log-row')) {
+                    // Toggle visibility if log row already exists
+                    logRow.remove();
+                    button.textContent = originalText;
+                    button.disabled = false;
+                    return;
+                }
 
-        try {
-            // Create and insert new log row
-            logRow = this.elements.serviceLogTemplate.content.cloneNode(true).firstElementChild;
-            logRow.dataset.key = logRowKey;
-            row.after(logRow);
+                try {
+                    // Create and insert new log row
+                    logRow = this.elements.serviceLogTemplate.content.cloneNode(true).firstElementChild;
+                    logRow.dataset.key = logRowKey;
+                    row.after(logRow);
 
-            const logContentEl = logRow.querySelector('.service-log-content');
-            logContentEl.textContent = 'Loading logs...';
+                    const logContentEl = logRow.querySelector('.service-log-content');
+                    logContentEl.textContent = 'Loading logs...';
 
-            // Add timeout to fetch request
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 10000);
+                    // Add timeout to fetch request
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 10000);
 
-            const response = await fetch(`/api/logs/${unit}`, {
-                signal: controller.signal
-            });
+                    const response = await fetch(`/api/logs/${unit}`, {
+                        signal: controller.signal
+                    });
 
-            clearTimeout(timeoutId);
+                    clearTimeout(timeoutId);
 
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    if (!response.ok) {
+                        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                    }
+
+                    const logs = await response.text();
+                    logContentEl.textContent = logs || 'No logs found.';
+
+                    // Smooth scroll to logs
+                    logRow.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'nearest'
+                    });
+
+                } catch (e) {
+                    console.error(`Failed to fetch logs for ${unit}:`, e);
+
+                    const logContentEl = logRow?.querySelector('.service-log-content');
+                    if (logContentEl) {
+                        const errorMsg = e.name === 'AbortError'
+                            ? 'Request timed out. Please try again.'
+                            : `Failed to load logs: ${e.message}`;
+                        logContentEl.textContent = errorMsg;
+                    }
+                } finally {
+                    button.textContent = originalText;
+                    button.disabled = false;
+                }
+            },
+
+            // --- GENERIC HELPERS ---
+            upsertList(container, template, dataList, keyField, updateFn) {
+                if (!container || !template || !Array.isArray(dataList)) return;
+                const dataMap = new Map(dataList.map(item => [String(item[keyField]), item]));
+                const existingElements = container.querySelectorAll(`[data-key]`);
+                for (const el of existingElements) {
+                    const key = el.dataset.key;
+                    // Skip log rows, as they are managed independently
+                    if (key && key.startsWith('log-')) {
+                        continue;
+                    }
+                    if (dataMap.has(key)) {
+                        updateFn.call(this, el, dataMap.get(key));
+                        dataMap.delete(key);
+                    } else {
+                        el.remove();
+                    }
+                }
+                for (const [key, itemData] of dataMap.entries()) {
+                    const newElement = template.content.cloneNode(true).firstElementChild;
+                    newElement.dataset.key = key;
+                    updateFn.call(this, newElement, itemData);
+                    container.appendChild(newElement);
+                }
+            },
+            updateTableRow(tr, cellsHtml) {
+                // This is a more robust way to handle table row updates.
+                // It avoids re-parsing the entire row's HTML unless necessary,
+                // which is more efficient and prevents errors with event listeners.
+
+                // First, ensure the row has the correct number of cells
+                while (tr.children.length < cellsHtml.length) {
+                    tr.appendChild(document.createElement('td'));
+                }
+                while (tr.children.length > cellsHtml.length) {
+                    tr.lastChild.remove();
+                }
+
+                // Now, update the content of each cell
+                for (let i = 0; i < cellsHtml.length; i++) {
+                    // Only update the DOM if the content has actually changed
+                    if (tr.children[i].innerHTML !== cellsHtml[i]) {
+                        tr.children[i].innerHTML = cellsHtml[i];
+                    }
+                }
+            },
+            formatTimeAgo(timestamp) {
+                const diffSeconds = Math.floor((new Date().getTime() - new Date(timestamp).getTime()) / 1000);
+                if (diffSeconds < 2) return 'just now';
+                if (diffSeconds < 60) return `${diffSeconds}s ago`;
+                if (diffSeconds < 3600) return `${Math.floor(diffSeconds / 60)}m ago`;
+                if (diffSeconds < 86400) return `${Math.floor(diffSeconds / 3600)}h ago`;
+                return `${Math.floor(diffSeconds / 86400)}d ago`;
+            },
+            getBarColor(percent) {
+                // Smooth color transition based on percentage
+                if (percent >= 95) return 'var(--c-red)';
+                if (percent >= 85) return '#e67e22'; // Orange-red
+                if (percent >= 75) return 'var(--c-yellow)';
+                if (percent >= 50) return '#f39c12'; // Orange-yellow
+                return 'var(--c-green)';
+            },
+
+            // Utility function for number formatting
+            formatNumber(num, decimals = 2) {
+                return Number(num).toFixed(decimals);
+            },
+
+            // Utility function for byte formatting
+            formatBytes(bytes, decimals = 2) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return parseFloat((bytes / Math.pow(k, i)).toFixed(decimals)) + ' ' + sizes[i];
             }
+        };
 
-            const logs = await response.text();
-            logContentEl.textContent = logs || 'No logs found.';
-
-            // Smooth scroll to logs
-            logRow.scrollIntoView({
-                behavior: 'smooth',
-                block: 'nearest'
-            });
-
-        } catch (e) {
-            console.error(`Failed to fetch logs for ${unit}:`, e);
-
-            const logContentEl = logRow?.querySelector('.service-log-content');
-            if (logContentEl) {
-                const errorMsg = e.name === 'AbortError'
-                    ? 'Request timed out. Please try again.'
-                    : `Failed to load logs: ${e.message}`;
-                logContentEl.textContent = errorMsg;
-            }
-        } finally {
-            button.textContent = originalText;
-            button.disabled = false;
-        }
-    },
-
-    // --- GENERIC HELPERS ---
-    upsertList(container, template, dataList, keyField, updateFn) {
-        if (!container || !template || !Array.isArray(dataList)) return;
-        const dataMap = new Map(dataList.map(item => [String(item[keyField]), item]));
-        const existingElements = container.querySelectorAll(`[data-key]`);
-        for (const el of existingElements) {
-            const key = el.dataset.key;
-            // Skip log rows, as they are managed independently
-            if (key && key.startsWith('log-')) {
-                continue;
-            }
-            if (dataMap.has(key)) {
-                updateFn.call(this, el, dataMap.get(key));
-                dataMap.delete(key);
-            } else {
-                el.remove();
-            }
-        }
-        for (const [key, itemData] of dataMap.entries()) {
-            const newElement = template.content.cloneNode(true).firstElementChild;
-            newElement.dataset.key = key;
-            updateFn.call(this, newElement, itemData);
-            container.appendChild(newElement);
-        }
-    },
-    updateTableRow(tr, cellsHtml) {
-        // This is a more robust way to handle table row updates.
-        // It avoids re-parsing the entire row's HTML unless necessary,
-        // which is more efficient and prevents errors with event listeners.
-
-        // First, ensure the row has the correct number of cells
-        while (tr.children.length < cellsHtml.length) {
-            tr.appendChild(document.createElement('td'));
-        }
-        while (tr.children.length > cellsHtml.length) {
-            tr.lastChild.remove();
-        }
-
-        // Now, update the content of each cell
-        for (let i = 0; i < cellsHtml.length; i++) {
-            // Only update the DOM if the content has actually changed
-            if (tr.children[i].innerHTML !== cellsHtml[i]) {
-                tr.children[i].innerHTML = cellsHtml[i];
-            }
-        }
-    },
-    formatTimeAgo(timestamp) {
-        const diffSeconds = Math.floor((new Date().getTime() - new Date(timestamp).getTime()) / 1000);
-        if (diffSeconds < 2) return 'just now';
-        if (diffSeconds < 60) return `${diffSeconds}s ago`;
-        if (diffSeconds < 3600) return `${Math.floor(diffSeconds / 60)}m ago`;
-        if (diffSeconds < 86400) return `${Math.floor(diffSeconds / 3600)}h ago`;
-        return `${Math.floor(diffSeconds / 86400)}d ago`;
-    },
-    getBarColor(percent) {
-        // Smooth color transition based on percentage
-        if (percent >= 95) return 'var(--c-red)';
-        if (percent >= 85) return '#e67e22'; // Orange-red
-        if (percent >= 75) return 'var(--c-yellow)';
-        if (percent >= 50) return '#f39c12'; // Orange-yellow
-        return 'var(--c-green)';
-    },
-
-    // Utility function for number formatting
-    formatNumber(num, decimals = 2) {
-        return Number(num).toFixed(decimals);
-    },
-
-    // Utility function for byte formatting
-    formatBytes(bytes, decimals = 2) {
-        if (bytes === 0) return '0 Bytes';
-        const k = 1024;
-        const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
-        const i = Math.floor(Math.log(bytes) / Math.log(k));
-        return parseFloat((bytes / Math.pow(k, i)).toFixed(decimals)) + ' ' + sizes[i];
-    }
-};
-
-document.addEventListener('DOMContentLoaded', () => DashboardApp.init());
+        document.addEventListener('DOMContentLoaded', () => DashboardApp.init());
     </script>
 </body>
+
 </html>

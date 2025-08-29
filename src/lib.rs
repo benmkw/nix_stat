@@ -1,3 +1,4 @@
+#![allow(non_snake_case)]
 use anyhow::{Context, Result};
 use jiff::Zoned;
 use serde::{Deserialize, Serialize};
@@ -40,170 +41,173 @@ impl StringOrVec {
 
 #[derive(Debug, Deserialize)]
 pub struct TailscaleStatus {
-    #[serde(rename = "Version")]
-    pub version: String,
-    #[serde(rename = "TUN")]
-    pub tun: bool,
-    #[serde(rename = "BackendState")]
-    pub backend_state: String,
-    #[serde(rename = "HaveNodeKey")]
-    pub have_node_key: bool,
-    #[serde(rename = "AuthURL")]
-    pub auth_url: String,
-    #[serde(rename = "TailscaleIPs")]
-    pub tailscale_ips: Vec<String>,
-    #[serde(rename = "Self")]
-    pub self_field: TailscaleSelf,
-    #[serde(rename = "Health")]
-    pub health: Vec<serde_json::Value>,
-    #[serde(rename = "MagicDNSSuffix")]
-    pub magic_dnssuffix: String,
-    #[serde(rename = "CurrentTailnet")]
-    pub current_tailnet: Tailnet,
-    #[serde(rename = "CertDomains")]
-    pub cert_domains: Option<serde_json::Value>,
+    // #[serde(rename = "Version")]
+    // pub version: String,
+    // #[serde(rename = "TUN")]
+    // pub tun: bool,
+    // #[serde(rename = "BackendState")]
+    // pub backend_state: String,
+    // #[serde(rename = "HaveNodeKey")]
+    // pub have_node_key: bool,
+    // #[serde(rename = "AuthURL")]
+    // pub auth_url: String,
+    // #[serde(rename = "TailscaleIPs")]
+    // pub tailscale_ips: Vec<String>,
+    // #[serde(rename = "Self")]
+    // pub self_field: TailscaleSelf,
+    // #[serde(rename = "Health")]
+    // pub health: Vec<serde_json::Value>,
+    // #[serde(rename = "MagicDNSSuffix")]
+    // pub magic_dnssuffix: String,
+    // #[serde(rename = "CurrentTailnet")]
+    // pub current_tailnet: Tailnet,
+    // #[serde(rename = "CertDomains")]
+    // pub cert_domains: Option<serde_json::Value>,
     #[serde(rename = "Peer")]
     pub peer: Option<std::collections::HashMap<String, TailscalePeerJson>>,
-    #[serde(rename = "User")]
-    pub user: Option<std::collections::HashMap<String, TailscaleUser>>,
-    #[serde(rename = "ClientVersion")]
-    pub client_version: Option<serde_json::Value>,
+    // #[serde(rename = "User")]
+    // pub user: Option<std::collections::HashMap<String, TailscaleUser>>,
+    // #[serde(rename = "ClientVersion")]
+    // pub client_version: Option<serde_json::Value>,
 }
 
-#[derive(Debug, Deserialize)]
-pub struct TailscaleSelf {
-    #[serde(rename = "ID")]
-    pub id: String,
-    #[serde(rename = "PublicKey")]
-    pub public_key: String,
-    #[serde(rename = "HostName")]
-    pub host_name: String,
-    #[serde(rename = "DNSName")]
-    pub dns_name: String,
-    #[serde(rename = "OS")]
-    pub os: String,
-    #[serde(rename = "UserID")]
-    pub user_id: u64,
-    #[serde(rename = "TailscaleIPs")]
-    pub tailscale_ips: Vec<String>,
-    #[serde(rename = "AllowedIPs")]
-    pub allowed_ips: Vec<String>,
-    #[serde(rename = "Addrs")]
-    pub addrs: Option<Vec<String>>,
-    #[serde(rename = "Relay")]
-    pub relay: String,
-    #[serde(rename = "RxBytes")]
-    pub rx_bytes: u64,
-    #[serde(rename = "TxBytes")]
-    pub tx_bytes: u64,
-    #[serde(rename = "Created")]
-    pub created: String,
-    #[serde(rename = "LastWrite")]
-    pub last_write: String,
-    #[serde(rename = "LastSeen")]
-    pub last_seen: String,
-    #[serde(rename = "LastHandshake")]
-    pub last_handshake: String,
-    #[serde(rename = "Online")]
-    pub online: bool,
-    #[serde(rename = "ExitNode")]
-    pub exit_node: bool,
-    #[serde(rename = "ExitNodeOption")]
-    pub exit_node_option: bool,
-    #[serde(rename = "Active")]
-    pub active: bool,
-    #[serde(rename = "TaildropTarget")]
-    pub taildrop_target: Option<u64>,
-    #[serde(rename = "NoFileSharingReason")]
-    pub no_file_sharing_reason: String,
-    #[serde(rename = "Capabilities")]
-    pub capabilities: Option<Vec<String>>,
-    #[serde(rename = "CapMap")]
-    pub cap_map: Option<serde_json::Value>,
-    #[serde(rename = "InNetworkMap")]
-    pub in_network_map: bool,
-    #[serde(rename = "InMagicSock")]
-    pub in_magic_sock: bool,
-    #[serde(rename = "InEngine")]
-    pub in_engine: bool,
-}
-#[derive(Debug, Deserialize)]
-pub struct Tailnet {
-    #[serde(rename = "Name")]
-    pub name: String,
-    #[serde(rename = "MagicDNSSuffix")]
-    pub magic_dnssuffix: String,
-    #[serde(rename = "MagicDNSEnabled")]
-    pub magic_dns_enabled: bool,
-}
+// TailscaleSelf struct is not used in the final HTML output
+// #[derive(Debug, Deserialize)]
+// pub struct TailscaleSelf {
+//     #[serde(rename = "ID")]
+//     pub id: String,
+//     #[serde(rename = "PublicKey")]
+//     pub public_key: String,
+//     #[serde(rename = "HostName")]
+//     pub host_name: String,
+//     #[serde(rename = "DNSName")]
+//     pub dns_name: String,
+//     #[serde(rename = "OS")]
+//     pub os: String,
+//     #[serde(rename = "UserID")]
+//     pub user_id: u64,
+//     #[serde(rename = "TailscaleIPs")]
+//     pub tailscale_ips: Vec<String>,
+//     #[serde(rename = "AllowedIPs")]
+//     pub allowed_ips: Vec<String>,
+//     #[serde(rename = "Addrs")]
+//     pub addrs: Option<Vec<String>>,
+//     #[serde(rename = "Relay")]
+//     pub relay: String,
+//     #[serde(rename = "RxBytes")]
+//     pub rx_bytes: u64,
+//     #[serde(rename = "TxBytes")]
+//     pub tx_bytes: u64,
+//     #[serde(rename = "Created")]
+//     pub created: String,
+//     #[serde(rename = "LastWrite")]
+//     pub last_write: String,
+//     #[serde(rename = "LastSeen")]
+//     pub last_seen: String,
+//     #[serde(rename = "LastHandshake")]
+//     pub last_handshake: String,
+//     #[serde(rename = "Online")]
+//     pub online: bool,
+//     #[serde(rename = "ExitNode")]
+//     pub exit_node: bool,
+//     #[serde(rename = "ExitNodeOption")]
+//     pub exit_node_option: bool,
+//     #[serde(rename = "Active")]
+//     pub active: bool,
+//     #[serde(rename = "TaildropTarget")]
+//     pub taildrop_target: Option<u64>,
+//     #[serde(rename = "NoFileSharingReason")]
+//     pub no_file_sharing_reason: String,
+//     #[serde(rename = "Capabilities")]
+//     pub capabilities: Option<Vec<String>>,
+//     #[serde(rename = "CapMap")]
+//     pub cap_map: Option<serde_json::Value>,
+//     #[serde(rename = "InNetworkMap")]
+//     pub in_network_map: bool,
+//     #[serde(rename = "InMagicSock")]
+//     pub in_magic_sock: bool,
+//     #[serde(rename = "InEngine")]
+//     pub in_engine: bool,
+// }
+// Tailnet struct is not used in the final HTML output
+// #[derive(Debug, Deserialize)]
+// pub struct Tailnet {
+//     #[serde(rename = "Name")]
+//     pub name: String,
+//     #[serde(rename = "MagicDNSSuffix")]
+//     pub magic_dnssuffix: String,
+//     #[serde(rename = "MagicDNSEnabled")]
+//     pub magic_dns_enabled: bool,
+// }
 
 #[derive(Debug, Deserialize)]
 pub struct TailscalePeerJson {
-    #[serde(rename = "ID")]
-    pub id: String,
-    #[serde(rename = "PublicKey")]
-    pub public_key: String,
+    // #[serde(rename = "ID")]
+    // pub id: String,
+    // #[serde(rename = "PublicKey")]
+    // pub public_key: String,
     #[serde(rename = "HostName")]
     pub host_name: String,
-    #[serde(rename = "DNSName")]
-    pub dns_name: String,
-    #[serde(rename = "PeerAPIURL")]
-    pub peer_api_url: Option<StringOrVec>,
-    #[serde(rename = "UserID")]
-    pub user_id: u64,
+    // #[serde(rename = "DNSName")]
+    // pub dns_name: String,
+    // #[serde(rename = "PeerAPIURL")]
+    // pub peer_api_url: Option<StringOrVec>,
+    // #[serde(rename = "UserID")]
+    // pub user_id: u64,
     #[serde(rename = "TailscaleIPs")]
     pub tailscale_ips: Vec<String>,
-    #[serde(rename = "AllowedIPs")]
-    pub allowed_ips: Vec<String>,
-    #[serde(rename = "Addrs")]
-    pub addrs: Option<Vec<String>>,
-    #[serde(rename = "Relay")]
-    pub relay: String,
-    #[serde(rename = "RxBytes")]
-    pub rx_bytes: u64,
-    #[serde(rename = "TxBytes")]
-    pub tx_bytes: u64,
-    #[serde(rename = "Created")]
-    pub created: String,
-    #[serde(rename = "LastWrite")]
-    pub last_write: String,
-    #[serde(rename = "LastSeen")]
-    pub last_seen: String,
-    #[serde(rename = "LastHandshake")]
-    pub last_handshake: String,
+    // #[serde(rename = "AllowedIPs")]
+    // pub allowed_ips: Vec<String>,
+    // #[serde(rename = "Addrs")]
+    // pub addrs: Option<Vec<String>>,
+    // #[serde(rename = "Relay")]
+    // pub relay: String,
+    // #[serde(rename = "RxBytes")]
+    // pub rx_bytes: u64,
+    // #[serde(rename = "TxBytes")]
+    // pub tx_bytes: u64,
+    // #[serde(rename = "Created")]
+    // pub created: String,
+    // #[serde(rename = "LastWrite")]
+    // pub last_write: String,
+    // #[serde(rename = "LastSeen")]
+    // pub last_seen: String,
+    // #[serde(rename = "LastHandshake")]
+    // pub last_handshake: String,
     #[serde(rename = "Online")]
     pub online: bool,
-    #[serde(rename = "ExitNode")]
-    pub exit_node: bool,
-    #[serde(rename = "ExitNodeOption")]
-    pub exit_node_option: bool,
-    #[serde(rename = "Active")]
-    pub active: bool,
-    #[serde(rename = "TaildropTarget")]
-    pub taildrop_target: Option<u64>,
-    #[serde(rename = "NoFileSharingReason")]
-    pub no_file_sharing_reason: String,
-    #[serde(rename = "InNetworkMap")]
-    pub in_network_map: bool,
-    #[serde(rename = "InMagicSock")]
-    pub in_magic_sock: bool,
-    #[serde(rename = "InEngine")]
-    pub in_engine: bool,
-    #[serde(rename = "KeyExpiry")]
-    pub key_expiry: Option<String>,
+    // #[serde(rename = "ExitNode")]
+    // pub exit_node: bool,
+    // #[serde(rename = "ExitNodeOption")]
+    // pub exit_node_option: bool,
+    // #[serde(rename = "Active")]
+    // pub active: bool,
+    // #[serde(rename = "TaildropTarget")]
+    // pub taildrop_target: Option<u64>,
+    // #[serde(rename = "NoFileSharingReason")]
+    // pub no_file_sharing_reason: String,
+    // #[serde(rename = "InNetworkMap")]
+    // pub in_network_map: bool,
+    // #[serde(rename = "InMagicSock")]
+    // pub in_magic_sock: bool,
+    // #[serde(rename = "InEngine")]
+    // pub in_engine: bool,
+    // #[serde(rename = "KeyExpiry")]
+    // pub key_expiry: Option<String>,
 }
 
-#[derive(Debug, Deserialize)]
-pub struct TailscaleUser {
-    #[serde(rename = "ID")]
-    pub id: u64,
-    #[serde(rename = "LoginName")]
-    pub login_name: String,
-    #[serde(rename = "DisplayName")]
-    pub display_name: String,
-    #[serde(rename = "ProfilePicURL")]
-    pub profile_pic_url: String,
-}
+// TailscaleUser struct is not used in the final HTML output
+// #[derive(Debug, Deserialize)]
+// pub struct TailscaleUser {
+//     #[serde(rename = "ID")]
+//     pub id: u64,
+//     #[serde(rename = "LoginName")]
+//     pub login_name: String,
+//     #[serde(rename = "DisplayName")]
+//     pub display_name: String,
+//     #[serde(rename = "ProfilePicURL")]
+//     pub profile_pic_url: String,
+// }
 
 #[derive(Debug, Deserialize)]
 pub struct IpAddrInfo {
@@ -238,12 +242,6 @@ pub struct IpAddrDetail {
     pub deprecated: Option<bool>,
     pub stable_privacy: Option<bool>,
     pub protocol: Option<String>,
-}
-
-#[derive(Debug, Deserialize)]
-pub struct SensorsRoot {
-    #[serde(rename = "macsmc_hwmon-isa-0000")]
-    pub macsmc: Macsmc,
 }
 
 #[derive(Debug, Deserialize)]
@@ -679,100 +677,140 @@ fn get_tailscale_metrics() -> anyhow::Result<TailscaleMetrics> {
     })
 }
 fn get_sensor_data() -> anyhow::Result<Vec<SensorReading>> {
+    use serde_json::Value;
     let sh = Shell::new()?;
     let out = cmd!(sh, "sensors -j").read()?;
-    let root: SensorsRoot = serde_json::from_str(&out)?;
+    let json: Value = serde_json::from_str(&out)?;
     let mut readings = vec![];
 
-    // Process macsmc_hwmon-isa-0000
-    let macsmc = root.macsmc;
-
-    if let Some(input) = macsmc.ac_input_voltage {
-        readings.push(SensorReading {
-            name: "AC Input Voltage".to_string(),
-            value: format!("{:.2}", input.in0_input),
-            unit: "V".to_string(),
-            current: Some(input.in0_input),
-            ..Default::default()
-        });
-    }
-    if let Some(fan) = macsmc.fan {
-        readings.push(SensorReading {
-            name: "Fan Speed".to_string(),
-            value: format!("{:.0}", fan.fan1_input),
-            unit: "RPM".to_string(),
-            min: Some(fan.fan1_min),
-            max: Some(fan.fan1_max),
-            current: Some(fan.fan1_input),
-        });
-    }
-    if let Some(temp) = macsmc.nand_flash_temperature {
-        for (key, value) in temp.temps {
-            readings.push(SensorReading {
-                name: format!("NAND Flash Temperature ({})", key),
-                value: format!("{:.1}", value),
-                unit: "°C".to_string(),
-                current: Some(value),
-                ..Default::default()
-            });
+    // Iterate all top-level devices
+    if let Value::Object(devices) = json {
+        for (dev_name, dev_val) in devices {
+            // Try to deserialize device value as Macsmc
+            if let Ok(macsmc) = serde_json::from_value::<Macsmc>(dev_val.clone()) {
+                // Use same logic as before for Macsmc
+                if let Some(input) = macsmc.ac_input_voltage {
+                    readings.push(SensorReading {
+                        name: "AC Input Voltage".to_string(),
+                        value: format!("{:.2}", input.in0_input),
+                        unit: "V".to_string(),
+                        current: Some(input.in0_input),
+                        ..Default::default()
+                    });
+                }
+                if let Some(fan) = macsmc.fan {
+                    readings.push(SensorReading {
+                        name: "Fan Speed".to_string(),
+                        value: format!("{:.0}", fan.fan1_input),
+                        unit: "RPM".to_string(),
+                        min: Some(fan.fan1_min),
+                        max: Some(fan.fan1_max),
+                        current: Some(fan.fan1_input),
+                    });
+                }
+                if let Some(temp) = macsmc.nand_flash_temperature {
+                    for (key, value) in temp.temps {
+                        readings.push(SensorReading {
+                            name: format!("NAND Flash Temperature ({})", key),
+                            value: format!("{:.1}", value),
+                            unit: "°C".to_string(),
+                            current: Some(value),
+                            ..Default::default()
+                        });
+                    }
+                }
+                if let Some(temp) = macsmc.wifi_bt_module_temp {
+                    for (key, value) in temp.temps {
+                        readings.push(SensorReading {
+                            name: format!("WiFi/BT Module Temp ({})", key),
+                            value: format!("{:.1}", value),
+                            unit: "°C".to_string(),
+                            current: Some(value),
+                            ..Default::default()
+                        });
+                    }
+                }
+                if let Some(power) = macsmc.total_system_power {
+                    for (key, value) in power.powers {
+                        readings.push(SensorReading {
+                            name: format!("Total System Power ({})", key),
+                            value: format!("{:.2}", value),
+                            unit: "W".to_string(),
+                            current: Some(value),
+                            ..Default::default()
+                        });
+                    }
+                }
+                if let Some(power) = macsmc.ac_input_power {
+                    for (key, value) in power.powers {
+                        readings.push(SensorReading {
+                            name: format!("AC Input Power ({})", key),
+                            value: format!("{:.2}", value),
+                            unit: "W".to_string(),
+                            current: Some(value),
+                            ..Default::default()
+                        });
+                    }
+                }
+                if let Some(power) = macsmc.rail_power {
+                    for (key, value) in power.powers {
+                        readings.push(SensorReading {
+                            name: format!("3.8 V Rail Power ({})", key),
+                            value: format!("{:.2}", value),
+                            unit: "W".to_string(),
+                            current: Some(value),
+                            ..Default::default()
+                        });
+                    }
+                }
+                if let Some(curr) = macsmc.ac_input_current {
+                    for (key, value) in curr.currents {
+                        readings.push(SensorReading {
+                            name: format!("AC Input Current ({})", key),
+                            value: format!("{:.0}", value * 1000.0),
+                            unit: "mA".to_string(),
+                            current: Some(value),
+                            ..Default::default()
+                        });
+                    }
+                }
+            } else if let Value::Object(fields) = dev_val {
+                // Fallback: generic parsing for unknown device types
+                for (field_name, field_val) in fields {
+                    match field_val {
+                        Value::Object(subfields) => {
+                            for (sub_name, sub_val) in subfields {
+                                if let Some(val) = sub_val.as_f64() {
+                                    readings.push(SensorReading {
+                                        name: format!(
+                                            "{}: {} ({})",
+                                            dev_name, field_name, sub_name
+                                        ),
+                                        value: format!("{:.2}", val),
+                                        unit: String::new(),
+                                        current: Some(val),
+                                        ..Default::default()
+                                    });
+                                }
+                            }
+                        }
+                        Value::Number(num) => {
+                            if let Some(val) = num.as_f64() {
+                                readings.push(SensorReading {
+                                    name: format!("{}: {}", dev_name, field_name),
+                                    value: format!("{:.2}", val),
+                                    unit: String::new(),
+                                    current: Some(val),
+                                    ..Default::default()
+                                });
+                            }
+                        }
+                        _ => {}
+                    }
+                }
+            }
         }
     }
-    if let Some(temp) = macsmc.wifi_bt_module_temp {
-        for (key, value) in temp.temps {
-            readings.push(SensorReading {
-                name: format!("WiFi/BT Module Temp ({})", key),
-                value: format!("{:.1}", value),
-                unit: "°C".to_string(),
-                current: Some(value),
-                ..Default::default()
-            });
-        }
-    }
-    if let Some(power) = macsmc.total_system_power {
-        for (key, value) in power.powers {
-            readings.push(SensorReading {
-                name: format!("Total System Power ({})", key),
-                value: format!("{:.2}", value),
-                unit: "W".to_string(),
-                current: Some(value),
-                ..Default::default()
-            });
-        }
-    }
-    if let Some(power) = macsmc.ac_input_power {
-        for (key, value) in power.powers {
-            readings.push(SensorReading {
-                name: format!("AC Input Power ({})", key),
-                value: format!("{:.2}", value),
-                unit: "W".to_string(),
-                current: Some(value),
-                ..Default::default()
-            });
-        }
-    }
-    if let Some(power) = macsmc.rail_power {
-        for (key, value) in power.powers {
-            readings.push(SensorReading {
-                name: format!("3.8 V Rail Power ({})", key),
-                value: format!("{:.2}", value),
-                unit: "W".to_string(),
-                current: Some(value),
-                ..Default::default()
-            });
-        }
-    }
-    if let Some(curr) = macsmc.ac_input_current {
-        for (key, value) in curr.currents {
-            readings.push(SensorReading {
-                name: format!("AC Input Current ({})", key),
-                value: format!("{:.0}", value * 1000.0),
-                unit: "mA".to_string(),
-                current: Some(value),
-                ..Default::default()
-            });
-        }
-    }
-
     readings.sort_by(|a, b| a.name.cmp(&b.name));
     Ok(readings)
 }
